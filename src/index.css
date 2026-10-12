@@ -1,0 +1,208 @@
+
+@import "tailwindcss";
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #f4f4f5;
+  background: #09090b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #09090b;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #e11d48;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+.font-display {
+  font-family: "Outfit", sans-serif;
+}
+
+.text-muted {
+  color: #a1a1aa;
+}
+
+.glass {
+  background: rgba(24, 24, 27, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: #e11d48;
+  padding: 12px 20px;
+  color: white;
+  font-weight: 700;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.primary-btn:hover {
+  background: #be123c;
+  transform: translateY(-2px);
+}
+
+.primary-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+}
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #3f3f46;
+  border-radius: 12px;
+  padding: 11px 18px;
+  color: #e4e4e7;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.secondary-btn:hover {
+  border-color: #e11d48;
+  background: #18181b;
+}
+
+.section-title {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.page-container {
+  width: min(1280px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.movie-card {
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-poster {
+  transition: transform 400ms ease;
+}
+
+.movie-card:hover .movie-poster {
+  transform: scale(1.045);
+}
+
+.seat {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 30px;
+  border: 1px solid #52525b;
+  border-radius: 7px 7px 4px 4px;
+  font-size: 10px;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.seat.available {
+  background: #18181b;
+  color: #d4d4d8;
+}
+
+.seat.available:hover {
+  border-color: #34d399;
+}
+
+.seat.selected {
+  background: #e11d48;
+  border-color: #e11d48;
+  color: white;
+}
+
+.seat.booked {
+  background: #3f3f46;
+  border-color: #3f3f46;
+  color: #71717a;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    width: calc(100% - 28px);
+  }
+
+  .seat {
+    width: 26px;
+    height: 26px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* CINEORA: small consistent side spacing across the entire website */
+.page-container {
+  width: 100%;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+@media (min-width: 640px) {
+  .page-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
